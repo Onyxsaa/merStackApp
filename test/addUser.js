@@ -11,7 +11,8 @@ const addUser = async (name, surname, age) => {
         "age": age
     })
     try {
-        const savedUser = await newUser.save()
+        
+        await newUser.save()
         console.log("Kullanıcı eklendi")
     } catch (error) {
         console.error(err)
