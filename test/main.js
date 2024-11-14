@@ -11,4 +11,4 @@ mongoose.connect(process.env.dbUrl,).then(() => {
     console.error("MongoDB bağlantı hatası:", error);
 });
 
-addUser("eren", "yılmaz", "45")
+addUser("vefa", "yılmaz", "45")

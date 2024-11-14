@@ -5,23 +5,23 @@ import User from "./userModel.js";
 
 
 const addUser = async (name, surname, age) => {
-    const newUser = new User({
-        "name": name,
-        "surname": surname,
-        "age": age
-    })
+
     try {
-        
-        await newUser.save()
-        console.log("Kullanıcı eklendi")
+        const createduser = await User.create({
+            "name": name,
+            "surname": surname,
+            "age": age
+        })
+        console.log("Kullanıcı Eklendi!")        
     } catch (error) {
-        console.error(err)
+        console.error(error)
+        console.log("bokluk var")
     } finally {
         mongoose.disconnect()
-        console.log("Bağlantı kapatıldı")
+        console.log("bağlantı Kapatıldı")
     }
-    
-    
+
+
 }
 
 export default addUser
